@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block body %}
+{% from "includes/formhelpers.html" import render_field %}
+
+
+
+  
+  
+  <body class="bg-dark">
+    
+    <div class="container">
+      <div class="card card-login mx-auto mt-5">
+        <div class="card-header">Klasik soru ekliyorsun, {{session["username"]}}</div>
+        <div class="card-body">
+          <form method="post">
+            
+            
+                {{ render_field(form.soru, class = "form-control" , placeholder = "Sorunuzu girin.") }}
+            
+              
+           
+                {{ render_field(form.klasikcevap, class = "form-control" , placeholder = "Cevabınızı girin.") }}
+                
+              
+          
+                
+              
+            
+            <br>
+            <button type="submit" class="btn btn-primary btn-block">Sorumu Ekle!</button>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+
+
+
+  </body>
+
+
+
+
+{% endblock body%}
+
+
+
+
+
+
+

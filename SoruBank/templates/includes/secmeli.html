@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<form action= "/search" method = "post">
+    
+  <div class="card-body row no-gutters align-items-center">
+  <div class="col-auto">
+      <i class="fas fa-search h4 text-body"></i>
+          </div>
+                          
+      <div class="col">
+          <input class="form-control form-control-lg form-control-borderless" type="search" name = "keyword"  placeholder="Anahtar kelime girin.">
+      </div>
+                              
+      <div class="col-auto">
+          <button class="btn btn-lg btn-success" type="submit">Ara!</button>
+      </div>
+                              
+                          </div>
+
+
+</form>
+<div class="card mb-1">
+  <div class="card-header">
+    <i class="fas fa-table"></i>
+    Çoktan Seçmeli Sorular</div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          {%if questions %}
+          <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Soru</th>
+                  
+                  <th scope="col">A</th>
+                  <th scope="col">B</th>
+                  <th scope="col">C</th>
+                  <th scope="col">D</th>
+                  <th scope="col">Test Cevap</th>
+                
+                  <th scope="col">Tarih</th>
+                  <th scope="col">Ekleyen</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+              {%for question in questions%}
+                <tr>
+                  <th scope="row">{{question.id}}</th>
+                    <td>{{question.soru}}</td>
+                   
+                    <td>{{question.asikki}}</td>
+                    <td>{{question.bsikki}}</td>
+                    <td>{{question.csikki}}</td>
+                    <td>{{question.dsikki}}</td>
+                    <td>{{question.secmelicevap}}</td>
+                   
+                    <td>{{question.created_date}}</td>
+                    <td>{{question.ekleyen}}</td>
+                </tr>
+          
+              {%endfor%}
+               
+              </tbody>
+            </table>
+          
+          
+          {%else%}
+          <div class="alert alert-danger">Henüz soru eklemediniz.</div>
+          
+          {%endif%}
+      </table>
+    </div>
+  </div>
+  <div class="card-footer text-muted">           </div>
+</div>
+
+
+{% endblock %}

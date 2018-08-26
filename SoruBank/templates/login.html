@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block body %}
+{% from "includes/formhelpers.html" import render_field %}
+
+
+
+  
+  
+  <body class="bg-dark">
+    
+    <div class="container">
+      <div class="card card-login mx-auto mt-5">
+        <div class="card-header">Giriş Yap</div>
+        <div class="card-body">
+          <form method="post">
+            
+            
+                {{ render_field(form.username, class = "form-control" , placeholder = "Kullanıcı adınız.") }}
+            
+              
+           
+                {{ render_field(form.password, class = "form-control" , placeholder = "Parolanızı girin.") }}
+                
+              
+          
+                
+              
+            
+            <br>
+            <button type="submit" class="btn btn-primary btn-block">Giriş Yap!</button>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+
+
+
+  </body>
+
+
+
+
+{% endblock body%}
+
+
+
+

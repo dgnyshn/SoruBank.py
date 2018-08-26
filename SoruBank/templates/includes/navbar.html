@@ -1,0 +1,70 @@
+<!-- Image and text -->
+
+<br><br>
+
+
+<nav class="navbar fixed-top navbar-light navbar-expand-lg navbar-dark " style="background-color: #7700ff;">
+  
+  <a class="navbar-brand" href="#">Navbar</a>
+  
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        
+        <a class="nav-link" href="/">Anasayfa <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about">Nasıl Çalışır?</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="/questions">Sorular</a>
+      </li>
+
+      
+    
+    </ul>
+    
+    <ul class="navbar-nav ml-auto">
+      
+      
+    
+    
+      {% if session["logged_in"]==True %}
+          <li class="nav-item active">
+              
+            <a class="nav-link" href="/dashboard">Dashboard</a>
+            </li>
+
+
+            <li class="nav-item">
+                
+              <a class="nav-link" href="/logout">Çıkış Yap</a>
+            </li>
+            
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Giriş Yap</a>
+          </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link" href="/register">Kaydol </a>
+          </li>
+
+          {% endif %}
+
+        
+              
+              
+
+
+    
+    </ul>
+  </div>
+</nav>

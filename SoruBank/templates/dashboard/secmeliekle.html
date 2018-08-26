@@ -1,0 +1,88 @@
+
+{% block body %}
+<div class="jumbotron text-center">
+  <p>Yeni <b>Çoktan Seçmeli</b> sorunu eklemek için bu butonu kullanabilirsin.</p>
+
+<a href= "/testEkle" class = "btn btn-primary"> Ekle!</a>
+</div>
+
+
+
+    
+  <div class="card-body row no-gutters align-items-center">
+  <div class="col-auto">
+      <i class="fas fa-search h4 text-body"></i>
+          </div>
+                          
+      <div class="col">
+          <input class="form-control form-control-lg form-control-borderless" type="search" name = "keyword"  placeholder="Anahtar kelime girin.">
+      </div>
+                              
+      <div class="col-auto">
+          <button class="btn btn-lg btn-success" type="submit">Ara!</button>
+      </div>
+                              
+                          </div>
+
+
+</form>
+<div class="card mb-1">
+  <div class="card-header">
+    <i class="fas fa-table"></i>
+    Çoktan seçmeli soruların, {{session["username"]}}</div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          {%if articles %}
+          <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Soru</th>
+                  <th scope="col">Klasik Cevap</th>
+                  <th scope="col">A</th>
+                  <th scope="col">B</th>
+                  <th scope="col">C</th>
+                  <th scope="col">D</th>
+                  <th scope="col">Test Cevap</th>
+                  <th scope="col">DY </th>
+                  <th scope="col">Tarih</th>
+                  <th scope="col"></th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+              {%for article in articles%}
+                <tr>
+                  <th scope="row">{{article.id}}</th>
+                    <td>{{article.soru}}</td>
+                    <td>{{article.klasikcevap}}</td>
+                    <td>{{article.asikki}}</td>
+                    <td>{{article.bsikki}}</td>
+                    <td>{{article.csikki}}</td>
+                    <td>{{article.dsikki}}</td>
+                    <td>{{article.secmelicevap}}</td>
+                    <td>{{article.dogruyanlis}}</td>
+                    <td>{{article.created_date}}</td>
+                    <td><a href="" class="btn btn-primary">Güncelle</a></td>
+                    <td><a href="" class="btn btn-danger">Sil</a></td>
+                </tr>
+          
+              {%endfor%}
+               
+              </tbody>
+            </table>
+          
+          
+          {%else%}
+          <div class="alert alert-danger">Henüz soru eklemediniz.</div>
+          
+          {%endif%}
+    </div>
+  </div>
+  <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+</div>
+
+
+
+{% endblock %}

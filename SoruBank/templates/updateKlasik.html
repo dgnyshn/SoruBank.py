@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+
+
+{% from "includes/formhelpers.html" import render_field %}
+
+
+
+  
+  
+  <body class="bg-dark">
+    
+    <div class="container">
+      <div class="card card-login mx-auto mt-5">
+        <div class="card-header">Soru güncelliyorsun, {{session["username"]}}</div>
+        <div class="card-body">
+          <form method="post">
+            
+            
+                {{ render_field(form.soru, class = "form-control") }}
+                {{ render_field(form.klasikcevap, class = "form-control") }}
+                {{ render_field(form.aSikki, class = "form-control") }}
+                {{ render_field(form.bSikki, class = "form-control") }}
+                {{ render_field(form.cSikki, class = "form-control") }}
+                {{ render_field(form.dSikki, class = "form-control") }}
+                {{ render_field(form.dogruyanlis) }}
+                {{ render_field(form.secmelicevap, class = "form-control") }}
+                
+              
+          
+                
+              
+            
+            <br>
+            <button type="submit" class="btn btn-primary btn-block">Sorumu Güncelle!</button>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+
+
+
+  </body>
+
+
+
+
+
+{% endblock %}
