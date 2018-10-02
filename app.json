@@ -1,0 +1,15 @@
+{
+  "name": "SoruBank.py",
+  "scripts": {
+  },
+  "env": {
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ]
+}
